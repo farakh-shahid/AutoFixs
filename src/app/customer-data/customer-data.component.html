@@ -1,0 +1,40 @@
+
+<div class="row">
+    <div class="col-3">
+        <div class="card" style="margin-top:10px;">
+            <div class="card-body" style="height:350px;">
+              <h5 class="card-title"><img class="me-2 h-20px fa-fw" src="https://social.webestica.com/assets/images/icon/home-outline-filled.svg" alt="">Home</h5>
+              <h5 class="card-title"><img class="me-2 h-20px fa-fw" src="https://social.webestica.com/assets/images/icon/person-outline-filled.svg" alt="">Service</h5>
+              <h5 class="card-title"><img class="me-2 h-20px fa-fw" src="https://social.webestica.com/assets/images/icon/earth-outline-filled.svg" alt="">About Us</h5>
+              <h5 class="card-title"><img class="me-2 h-20px fa-fw" src="https://social.webestica.com/assets/images/icon/notification-outlined-filled.svg" alt="">Contact us</h5>
+              <h5 class="card-title"><img class="me-2 h-20px fa-fw" src="https://social.webestica.com/assets/images/icon/cog-outline-filled.svg" alt="">Settings</h5>
+              
+              
+            </div>
+          </div>
+    </div>
+    <div class="col-6 postCard">
+      <div class="buttonPost" style="margin-top: 20px">
+        <button mat-raised-button (click)="openDialog()">
+          Create Post</button>
+      </div>
+      <div class="row" style="padding: 2rem 0rem;width: -webkit-fill-available;">
+            <div class="col-12" style="padding: 2rem 0rem;" *ngFor="let data of postArray; let i = index" >
+              <app-post-card [data]="data"></app-post-card>
+            </div>
+      </div>
+    </div>
+    <div class="col-3">
+        <div class="card" style="margin-top: 10px;" >
+            <div class="card-body"style="height 359px;">
+              <h5 class="card-title"><img class="me-2 h-20px fa-fw" src="https://social.webestica.com/assets/images/icon/person-outline-filled.svg" alt="">Profile</h5>
+              <h5 class="card-title"><img class="me-2 h-20px fa-fw" src="https://social.webestica.com/assets/images/icon/person-outline-filled.svg" alt="">Connections</h5>
+              <h5 class="card-title"><img class="me-2 h-20px fa-fw" src="https://social.webestica.com/assets/images/icon/earth-outline-filled.svg" alt="">Latest News</h5>
+              <h5 class="card-title"><img class="me-2 h-20px fa-fw" src="https://social.webestica.com/assets/images/icon/notification-outlined-filled.svg" alt="">Notification</h5>
+              <h5 class="card-title"><img class="me-2 h-20px fa-fw" src="https://social.webestica.com/assets/images/icon/cog-outline-filled.svg" alt="">Settings</h5>
+              
+            </div>
+          </div>
+          
+    </div>
+</div>

@@ -1,0 +1,8 @@
+<div class="container">
+    <div class="h3">  {{Name}}</div>
+    <div class="row" style="padding: 0rem 0rem 2rem 0rem;width: -webkit-fill-available;">
+        <div class="col-12" *ngFor="let item of postArray; let i = index">
+            <app-all-posts [data]="item"></app-all-posts>
+        </div>
+    </div>
+</div>

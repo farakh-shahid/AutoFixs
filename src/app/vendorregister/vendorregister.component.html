@@ -1,0 +1,82 @@
+<div class="page">
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    <form [formGroup]="vendorForm" (ngSubmit)="onSubmit()">
+        <h3>Vendor Register </h3>
+        <div class="row">
+            <div class="col-6">
+
+                <div class="form-group">
+                    <label for="username">First Name</label>
+                    <input type="text" formControlName="firstname"  id="firstname">
+                    <div *ngIf="f['firstname'].errors && (f['firstname'].dirty || f['firstname'].touched)">
+                        <div *ngIf="f['firstname'].errors['required']" class="text-danger">First Name is required</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="password">Last Name</label>
+                    <input type="text" formControlName="lastname"  id="password">
+                    <div *ngIf="f['lastname'].errors && (f['lastname'].dirty || f['lastname'].touched)">
+                        <div *ngIf="f['lastname'].errors['required']" class="text-danger">Last Name is required</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="form-group">
+            <label for="username">Email</label>
+            <input type="text" style="width: 92%;" formControlName="username"  id="username">
+            <div *ngIf="f['username'].errors && (f['username'].dirty || f['username'].touched)">
+                <div *ngIf="f['username'].errors['required']" class="text-danger">Email is required</div>
+                <div *ngIf="f['username'].errors['pattern']" class="text-danger">Email must be a valid email address</div>
+            </div>
+            <div class="text-danger" *ngIf="this.isExist==true">Email address already exists</div>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" style="width: 92%;" formControlName="password"  id="password">
+            <div *ngIf="f['password'].errors && (f['password'].dirty || f['password'].touched)">
+                <div *ngIf="f['password'].errors['required']" class="text-danger">Password is required</div>
+                <div *ngIf="f['password'].errors['minlength']" class="text-danger">Password must be at least 6 characters</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="shopename">ShopName</label>
+            <input type="text" formControlName="shopename" id="ShopName">
+            <div *ngIf="f['shopename'].errors && (f['shopename'].dirty || f['shopename'].touched)">
+                <div *ngIf="f['shopename'].errors['required']" class="text-danger">Shop Name is required</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="shopaddress">ShopAddress</label>
+            <input type="text" formControlName="shopaddress"  id="ShopAddress">
+            <div *ngIf="f['shopaddress'].errors && (f['shopaddress'].dirty || f['shopaddress'].touched)">
+                <div *ngIf="f['shopaddress'].errors['required']" class="text-danger">Shop Address is required</div>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label for="username">Phone Number</label>
+            <input type="text" style="width:92% ;" formControlName="phone"  id="phoneNo">
+            <div *ngIf="f['phone'].errors && (f['phone'].dirty || f['phone'].touched)">
+                <div *ngIf="f['phone'].errors['required']" class="text-danger">Phone Number is required</div>
+            </div>
+        </div>
+
+
+
+
+        <button type="submit">Submit</button>
+
+    </form>
+</div>

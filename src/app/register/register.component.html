@@ -1,0 +1,67 @@
+<div class="page">
+    <div class="background">
+
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <h3>Register Here</h3>
+
+        <div class="row">
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="username">First Name</label>
+                    <input type="text" formControlName="firstname"  id="firstname">
+                    <div *ngIf="f['firstname'].errors && (f['firstname'].dirty || f['firstname'].touched)">
+                        <div *ngIf="f['firstname'].errors['required']" class="text-danger">First Name is required</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="password">Last Name</label>
+                    <input type="text" formControlName="lastname"  id="password">
+                    <div *ngIf="f['lastname'].errors && (f['lastname'].dirty || f['lastname'].touched)">
+                        <div *ngIf="f['lastname'].errors['required']" class="text-danger">Last Name is required</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="username">Email</label>
+            <input type="text" style="width: 92%;" formControlName="username"  id="username">
+            <div *ngIf="f['username'].errors && (f['username'].dirty || f['username'].touched)">
+                <div *ngIf="f['username'].errors['required']" class="text-danger">Email is required</div>
+                <div *ngIf="f['username'].errors['pattern']" class="text-danger">Email must be a valid Pattern</div>
+            </div>
+            <div class="text-danger" *ngIf="this.isExist==true">Email address already exists</div>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" style="width: 92%;" formControlName="password" id="password">
+            <div *ngIf="f['password'].errors && (f['password'].dirty || f['password'].touched)">
+                <div *ngIf="f['password'].errors['required']" class="text-danger">Password is required</div>
+                <div *ngIf="f['password'].errors['minlength']" class="text-danger">Password must be at least 6 characters</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="username">Phone Number</label>
+            <input type="text" style="width:92% ;" formControlName="phone"  id="phoneNo">
+            <div *ngIf="f['phone'].errors && (f['phone'].dirty || f['phone'].touched)">
+                <div *ngIf="f['phone'].errors['required']" class="text-danger">Phone Number is required</div>
+                <div *ngIf="f['phone'].errors['pattern']" class="text-danger">phone Number must be 11 digit</div>
+ 
+            </div>
+        </div>
+
+        <div class="submitButton">
+            <button type="submit">Submit</button>
+        </div>
+
+        <!-- <div class="social">
+          <div class="go"><i class="fab fa-google"></i>  Google</div>
+          <div class="fb"><i class="fab fa-facebook"></i>  Facebook</div>
+        </div> -->
+    </form>
+</div>
