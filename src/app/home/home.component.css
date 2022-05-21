@@ -73,11 +73,7 @@ svg.material-icons {
 svg.material-icons:not(:last-child) {
   margin-right: 8px;
 }
-.card-body {
-  flex: 1 1 auto;
-  padding: 1rem 1rem;
-  height: 350px;
-}
+
 
 .card svg.material-icons path {
   fill: #888;
